@@ -4,17 +4,14 @@
   %h2 #{BOOK_TITLE}: #{@year.year_string}
 
 #colophon
-  %p 
+  %p
     &copy; #{Bookmark.start_year}-#{Time.now.year} #{AUTHOR_NAME}
     %br
-    Set in Minion Pro and Helvetica Neue Light.
-    Data extracted from Pinboard.
-    %br
-    http://pinboard.in/u:#{PINBOARD_USERNAME}
+    Data extracted from http://pinboard.in/u:#{PINBOARD_USERNAME}
 
 #cover
   %h1 #{BOOK_TITLE}: #{@year.year_string}
-  %h2 #{AUTHOR_NAME} 
+  %h2 #{AUTHOR_NAME}
   %h3 Volume #{@year.volume_number_based_on_start_year(Bookmark.start_year)}
 
 #toc
@@ -36,14 +33,14 @@
             %h3.day= format_date(day_collection.first.bookmarked_at)
             %ul.bookmarks
               - for bookmark in day_collection
-                %li.bookmark
+                %li.bookmark.clearfix
                   .qr
                     %img{:src => bookmark.qr_for_url}
                   .bookmark_itself
                     %h4= h bookmark.description
                     .href= h bookmark.href
                     .desc= h bookmark.extended
-                    .tags 
+                    .tags
                       -output = []
                       - bookmark.tags.each do |t|
                         - unique_id, new_previous_tags = id_for_tag(t, @previous_tags)

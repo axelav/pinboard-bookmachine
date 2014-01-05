@@ -28,7 +28,7 @@ namespace :ingest do
       b.bookmarked_at = Time.parse(post.attr("time"))
       b.raw_tags = post.attr("tag")
       b.created_at = Time.now
-      
+
       b.save
       print "."
     end
@@ -48,7 +48,7 @@ namespace :ingest do
         print "x"
       end
     end
-    puts     
+    puts
   end
 
   desc "Cache years for bookmarks"
@@ -69,7 +69,7 @@ namespace :publish do
     years = Year.all
     years.each do |y|
       year = y.year_string
-      `prince http://localhost:9292/year/#{year} -o output/#{year}.pdf`
+      `prince http://localhost:9292/year/#{year} -vo output/#{year}.pdf`
     end
   end
 
@@ -77,7 +77,7 @@ namespace :publish do
   task :year => :environment do
     if ENV["YEAR"]
       if Year.find_by_year_string(ENV["YEAR"])
-        `prince http://localhost:9292/year/#{ENV['YEAR']} -o output/#{ENV['YEAR']}.pdf`
+        `prince http://localhost:9292/year/#{ENV['YEAR']} -vo output/#{ENV['YEAR']}.pdf`
       else
         puts "That year could not be found."
       end

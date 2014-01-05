@@ -15,15 +15,17 @@ div {max-width:400px !important;}
 
 @page :left {
   @top-center {
-    font: 8pt "Minion Pro", serif;
-    content: string(title,first); 
+    font-family: "Avenir";
+    font-size: 8pt;
+    content: string(title,first);
     vertical-align: bottom;
     padding-bottom: 2em;
     text-transform: uppercase
   }
 
   @bottom-center{
-    font: 8pt "Minion Pro", serif;
+    font-family: "Avenir";
+    font-size: 8pt;
     text-align: center;
     content: counter(page);
     padding-top: 2em;
@@ -33,15 +35,17 @@ div {max-width:400px !important;}
 
 @page :right {
   @top-center{
-    font: 8pt "Minion Pro", serif;    
-    content: string(header, first); 
+    font-family: "Avenir";
+    font-size: 8pt;
+    content: string(header, first);
     vertical-align: bottom;
-    padding-bottom: 2em; 
+    padding-bottom: 2em;
     text-transform: uppercase;
   }
 
   @bottom-center{
-    font: 8pt "Minion Pro", serif;
+    font-family: "Avenir";
+    font-size: 8pt;
     content: counter(page);
     text-align: center;
     vertical-align: top;
@@ -59,7 +63,7 @@ div {max-width:400px !important;}
 }
 
 @page cover { margin: 0; }
-@page backcover { margin: 0; }  
+@page backcover { margin: 0; }
 
 @page frontmatter {
   @top-center{
@@ -79,6 +83,6 @@ div {max-width:400px !important;}
 @page blank :right {
   @top-center{ content: none;}
   @bottom-center{ content: none;}
-} 
+}
 
 

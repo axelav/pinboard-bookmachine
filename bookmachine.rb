@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'sass'
 
 #thes two are the application broken out a bit.
 require File.expand_path('../helpers', __FILE__)
@@ -9,9 +10,9 @@ require File.expand_path('../models', __FILE__)
 set :haml, :format => :html5
 set :database, 'sqlite://development.db'
 
-AUTHOR_NAME = "Tom Armitage"
-PINBOARD_USERNAME = "infovore"
-BOOK_TITLE = "A Year of Links"
+AUTHOR_NAME = "Axel Anderson"
+PINBOARD_USERNAME = "axelav"
+BOOK_TITLE = "A Year on the Internet"
 
 get '/' do
   @years = Year.order("year_string")
@@ -24,7 +25,7 @@ end
 
 get '/year/:year' do
   @year = Year.where(:year_string => params[:year]).first
-  @bookmarks = @year.bookmarks 
+  @bookmarks = @year.bookmarks
   @bookmarks_by_month = @bookmarks.group_by(&:month)
 
   @title = "#{BOOK_TITLE}: #{@year.year_string}"

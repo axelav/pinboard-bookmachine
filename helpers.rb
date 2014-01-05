@@ -1,9 +1,9 @@
 helpers do
   include Rack::Utils
   alias_method :h, :escape_html
-  
+
   def format_date(date)
-    date.strftime("%d %B %Y")
+    date.strftime("%B %e, %Y")
   end
 
   def mark_hash(string)
