@@ -1,0 +1,22 @@
+{
+  "title": "pinboard-bookmarkmachine",
+  "author": "Axel Anderson",
+  "scripts": {
+    "start": "nodemon main.js"
+  },
+  "dependencies": {
+    "days": "^1.0.1",
+    "error": "^7.0.2",
+    "lodash.filter": "^3.1.1",
+    "lodash.map": "^3.1.4",
+    "lodash.reduce": "^3.1.2",
+    "lodash.uniq": "^3.2.2",
+    "months": "^1.0.0",
+    "routes-router": "^4.2.0",
+    "send-data": "^8.0.0",
+    "virtual-dom": "^2.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.7.2"
+  }
+}
