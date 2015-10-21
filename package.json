@@ -1,5 +1,5 @@
 {
-  "title": "pinboard-bookmarkmachine",
+  "title": "pinboard-bookmachine",
   "author": "Axel Anderson",
   "scripts": {
     "start": "nodemon main.js"
@@ -7,7 +7,11 @@
   "dependencies": {
     "days": "^1.0.1",
     "error": "^7.0.2",
+    "hyperscript": "^1.4.7",
+    "lodash.assign": "^3.2.0",
     "lodash.filter": "^3.1.1",
+    "lodash.groupby": "^3.1.1",
+    "lodash.keys": "^3.1.2",
     "lodash.map": "^3.1.4",
     "lodash.reduce": "^3.1.2",
     "lodash.uniq": "^3.2.2",
