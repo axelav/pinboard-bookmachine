@@ -1,6 +1,8 @@
 var days = require('days')
 var months = require('months')
 
+module.exports = formatDate
+
 function formatDate (date) {
   return [
     days[date.getDay()],
@@ -12,5 +14,3 @@ function formatDate (date) {
     date.getFullYear()
   ].join('')
 }
-
-module.exports = formatDate
