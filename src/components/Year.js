@@ -21,4 +21,6 @@ function Year (data) {
     TOCList(bookmarksByMonth),
     Months(bookmarksByMonth)
   )
+
+  // TODO: create tag index
 }
