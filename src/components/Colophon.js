@@ -1,4 +1,3 @@
-
 var h = require('hyperscript')
 
 module.exports = Colophon

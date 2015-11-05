@@ -1,3 +1,4 @@
+var sendJson = require('send-data/json')
 
 var routerConfig = {
   notFound: function notFound (req, res) {

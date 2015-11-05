@@ -1,20 +1,21 @@
 var h = require('hyperscript')
 var map = require('lodash.map')
-// TODO: do these modules do what I want?
-var he = require('he')
-var Remarkable = require('remarkable');
-var md = new Remarkable();
+// FIXME: doesn't work; how to insert arbitrary html into hyperscript?
+// var parser = require('html2hscript')
+// var md = require('virtual-markdown')
+var tovdom = require('to-virtual-dom')
 
 module.exports = Bookmark
 
 function Bookmark (data) {
   return h('li.bookmark',
-    // TODO: QR code
-    // FIXME: escape characters, eg `\u00b7`
-    h('h4.title', he.decode(data.description)),
+    h('h4.title', data.description),
     h('a.href', {href: data.href}, data.href),
-    // TODO: run thru markdown filter
-    h('div.extended', data.extended),
+    if (data.extended.length)
+    // h('div.extended', [
+    //   tovdom(data.extended)
+    //   md(data.extended)
+    // ]),
     h('ul.tags',
       map(data.tags, function (x) {
         return h('li', x)
